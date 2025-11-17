@@ -1,0 +1,304 @@
+:root {
+    /* Paleta UniFECAF */
+    --unifecaf-primary: #004085; /* Azul Escuro Principal */
+    --unifecaf-secondary: #007bff; /* Azul Secundário (Links/Hover) */
+    --unifecaf-accent: #ffc107; /* Amarelo (Destaque/Botões +) */
+    --color-text: #333;
+    --color-bg: #f5f7fa; /* Fundo muito leve, quase branco */
+    --color-card-bg: #ffffff; /* Fundo dos cartões branco puro */
+    --color-border: #e0e6ed;
+    --color-error: #dc3545;
+    --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.07); /* Sombra mais fina e elevada */
+    --shadow-input-focus: 0 0 0 4px rgba(0, 123, 255, 0.25); /* Foco moderno */
+}
+
+/* Base e Tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+main {
+    max-width: 960px; /* Largura levemente maior */
+    margin: 0 auto;
+}
+
+/* Cabeçalho e Branding */
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: var(--unifecaf-primary);
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 12px; 
+    box-shadow: var(--shadow-subtle);
+}
+
+.unifecaf-logo {
+    max-width: 200px; 
+    height: auto;
+    display: block; 
+    margin: 0 auto 5px auto;
+}
+
+header h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+header h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+/* Card Design (Section-card) */
+.section-card {
+    background: var(--color-card-bg);
+    padding: 30px; 
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.2s ease-in-out;
+}
+.section-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-card legend {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--unifecaf-primary);
+    padding: 0 10px;
+    border-bottom: 2px solid var(--unifecaf-secondary);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Campos de Entrada (Inputs) */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 12px; 
+    border: 1px solid var(--color-border);
+    border-radius: 8px; 
+    font-size: 1.05rem;
+    background-color: #fcfcfc;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--unifecaf-secondary);
+    box-shadow: var(--shadow-input-focus);
+    outline: none;
+}
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+/* Botões Principais */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: var(--unifecaf-primary);
+    color: white;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 64, 133, 0.3);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: var(--unifecaf-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Tabela de Frequência */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+#attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    min-width: 700px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+#attendance-table th,
+#attendance-table td {
+    border: 1px solid var(--color-border);
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+#attendance-table th {
+    background-color: var(--unifecaf-secondary); 
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px;
+    white-space: normal;
+}
+#attendance-table th:nth-child(1) { width: 20%; }
+#attendance-table th:nth-child(2) { width: 15%; }
+#attendance-table th:nth-child(3) { width: 15%; }
+#attendance-table th:nth-child(4) { width: 40%; }
+#attendance-table th:nth-child(5) { width: 10%; }
+
+#attendance-table td input {
+    border: none;
+    padding: 12px 5px;
+    text-align: center;
+    border-radius: 0;
+    background-color: var(--color-card-bg);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Botão de Adicionar Linha (FAB style) */
+.secondary-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: var(--unifecaf-accent);
+    color: var(--color-text);
+    float: right;
+    border-radius: 50%;
+    line-height: 50px; 
+    font-size: 2rem;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.5);
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+.secondary-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-12px) scale(1.05);
+}
+
+/* Botão de Excluir */
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 10px;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+}
+.delete-btn:hover {
+    color: #a00;
+    transform: scale(1.2);
+}
+#attendance-table td:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Campos de Critérios de Avaliação (NOVO FORMS) */
+.criteria-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #e9ecef;
+    padding: 15px 0;
+    transition: background-color 0.3s;
+}
+.criteria-group:hover {
+    background-color: rgba(0, 123, 255, 0.03); 
+}
+.criteria-group label {
+    flex-grow: 1;
+    font-weight: 400;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+.criteria-group input[type="number"] {
+    width: 80px; 
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0;
+}
+.section-note {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+/* Rodapé Centralizado */
+footer {
+    text-align: center; 
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    border-top: 1px solid var(--color-border);
+    margin-top: 25px; 
+}
+footer p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+
+/* Responsividade - Mobile-First */
+@media (min-width: 650px) {
+    fieldset > .form-group:not(.criteria-group):nth-child(odd) {
+        float: left;
+        width: 48%;
+        margin-right: 4%;
+    }
+    fieldset > .form-group:not(.criteria-group):nth-child(even) {
+        float: right;
+        width: 48%;
+        margin-right: 0;
+    }
+    fieldset:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Campos de Parecer e textarea devem ser full-width */
+    fieldset .form-group:has(textarea) {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+}

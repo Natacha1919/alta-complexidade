@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Desempenho Alta Complexidade - UniFECAF</title>
+    
+    <link rel="icon" type="image/png" href="unifecaf.png"> 
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="unifecaf_logo.png" alt="Logo UniFECAF" class="unifecaf-logo">
+            <p>Seu Futuro Começa Aqui</p>
+        </div>
+        <h2>AVALIAÇÃO DE DESEMPENHO DO DISCENTE</h2>
+        <h3>Serviços de Saúde de Média e Alta Complexidade</h3>
+    </header>
+
+    <main>
+        <form id="altaEvaluationForm">
+            <input type="hidden" name="formType" value="avaliacao_alta">
+
+            <fieldset class="section-card">
+                <legend>Dados Gerais</legend>
+                <div class="form-group">
+                    <label for="aluno">Aluno:</label>
+                    <input type="text" id="aluno" name="aluno" required placeholder="Nome Completo do Aluno">
+                </div>
+                <div class="form-group">
+                    <label for="ra">RA:</label>
+                    <input type="text" id="ra" name="ra" required pattern="\d{4,10}" placeholder="Registro Acadêmico">
+                </div>
+                <div class="form-group">
+                    <label for="instituicao">Instituição de Saúde:</label>
+                    <input type="text" id="instituicao" name="instituicao" required placeholder="Nome da Instituição">
+                </div>
+                <div class="form-group">
+                    <label for="preceptor">Preceptor:</label>
+                    <input type="text" id="preceptor" name="preceptor" required placeholder="Nome Completo do Preceptor">
+                </div>
+                <div class="form-group">
+                    <label for="dataAvaliacao">Data da Avaliação:</label>
+                    <input type="date" id="dataAvaliacao" name="dataAvaliacao" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="section-card">
+                <legend>1. CONHECIMENTOS TÉCNICOS CIENTÍFICOS (0 a 10 pontos)</legend>
+                <p class="section-note">Atribua uma nota de 0 a 10 para cada item. Valor da avaliação: 0-10 pontos.</p>
+                <div id="N1-criteria">
+                    </div>
+            </fieldset>
+
+            <fieldset class="section-card">
+                <legend>2. ATITUDES (0 a 10 pontos)</legend>
+                <div id="N2-criteria">
+                     </div>
+            </fieldset>
+            
+            <fieldset class="section-card">
+                <legend>3. HABILIDADES (0 a 10 pontos)</legend>
+                <div id="N3-criteria">
+                     </div>
+            </fieldset>
+
+            <fieldset class="section-card">
+                <legend>Parecer do Preceptor e Ciência do Aluno</legend>
+                <div class="form-group">
+                    <label for="pontosPositivos">Pontos positivos:</label>
+                    <textarea id="pontosPositivos" name="pontosPositivos" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pontosAprimorar">Pontos a serem aprimorados:</label>
+                    <textarea id="pontosAprimorar" name="pontosAprimorar" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="assinaturaProfessor">Assinatura Digital do Preceptor (Nome Completo):</label>
+                    <input type="text" id="assinaturaProfessor" name="assinaturaProfessor" required placeholder="Nome Completo">
+                </div>
+                <div class="form-group">
+                    <label for="cienciaAluno">Ciência Digital do Aluno (Nome Completo):</label>
+                    <input type="text" id="cienciaAluno" name="cienciaAluno" required placeholder="Nome Completo">
+                </div>
+            </fieldset>
+
+            <div id="form-status" role="alert" aria-live="polite" class="hidden"></div>
+            <button type="submit" id="submitBtn">Enviar Avaliação de Alta Complexidade</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 UniFECAF - Avaliação de Desempenho Hospitalar.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
