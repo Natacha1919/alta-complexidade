@@ -1,7 +1,7 @@
 :root {
     /* Paleta UniFECAF */
-    --unifecaf-primary: #004085; /* Azul Escuro Principal */
-    --unifecaf-secondary: #007bff; /* Azul Secundário (Links/Hover) */
+    --unifecaf-primary: #07284b; /* Azul Escuro Principal */
+    --unifecaf-secondary: #07284b; /* Azul Secundário (Links/Hover) */
     --unifecaf-accent: #ffc107; /* Amarelo (Destaque/Botões +) */
     --color-text: #333;
     --color-bg: #f5f7fa; /* Fundo muito leve, quase branco */
